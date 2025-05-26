@@ -1,9 +1,10 @@
 import Image from "next/image";
 import { Button } from "../button/button";
+import { Container } from "@/common/container";
 
 export function Hero() {
   return (
-    <div className="mt-8">
+    <Container className="my-8">
       <div className="flex flex-col items-center max-w-[52.7rem] w-full mx-auto text-center gap-6 px-4">
         <h1 className="font-01 font-bold text-[32px] tablet:text-[64px] leading-tight">
           Assessoria jurídica com empatia.
@@ -19,16 +20,16 @@ export function Hero() {
           message="Olá! vim pelo site :)"
         />
       </div>
-      <div className="flex justify-center mt-12 px-4">
+      <div className="flex justify-center mt-12 px-4 tablet:px-0">
         <Image
-          className="rounded-sm w-full h-auto max-w-5xl"
+          className="rounded-sm w-full max-h-[640px] max-w-full object-cover "
           src="/assets/martelo.jpg"
           alt="Martelo"
-          width={1289}
+          width={1300}
           height={440}
         />
       </div>
-    </div>
+    </Container>
   );
 }
 

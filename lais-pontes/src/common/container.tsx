@@ -8,7 +8,7 @@ interface ContainerProps {
 
 export function Container({ children, className }: ContainerProps) {
   return (
-    <div className={classNames("tablet:px-12 tablet:py-6", className)}>
+    <div className={classNames("tablet:px-20 tablet:py-6", className)}>
       {children}
     </div>
   );

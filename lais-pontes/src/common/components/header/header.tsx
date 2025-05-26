@@ -8,11 +8,13 @@ import { NavLink } from "./components/nav-link";
 import { Button } from "../button/button";
 import { Container } from "@/common/container";
 import { PopoverComponent } from "@/common/popover";
+import { useEffect, useState } from "react";
+import classNames from "classnames";
 
 const headerNav = tv({
   slots: {
     headerPrimitive:
-      "flex h-28 items-center justify-between bg-background py-4 px-6 gap-4",
+      "fixed top-0 left-0 right-0 z-50 flex items-center h-28 transition-colors duration-300 px-20",
     left: "flex flex-1 justify-start items-center",
     center: "flex flex-1 justify-center items-center",
     right: "flex flex-1 justify-end items-center",
@@ -23,6 +25,7 @@ const headerNav = tv({
 });
 
 export function HeaderNav() {
+  const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
 
   const {
@@ -35,6 +38,14 @@ export function HeaderNav() {
     mobileLogo,
   } = headerNav();
 
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 10);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
   const publicLinks = [
     { href: "/propostas", name: "Sobre" },
     { href: "/areas", name: "Áreas" },
@@ -45,7 +56,14 @@ export function HeaderNav() {
 
   return (
     <Container>
-      <header className={headerPrimitive()}>
+      <header
+        className={classNames(
+          headerPrimitive(),
+          scrolled
+            ? "backdrop-blur bg-white/60 border-b border-zinc-200 shadow-sm"
+            : "bg-transparent"
+        )}
+      >
         <div className={left()}>
           <nav className={navItems()}>
             {publicLinks.map((link) => {
