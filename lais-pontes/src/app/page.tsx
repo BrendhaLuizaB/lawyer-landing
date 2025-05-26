@@ -1,7 +1,7 @@
+import LandingContent from "@/modules/landing-content";
+
 export default function Page() {
   return (
-    <div>
-      <h1>OLÁ</h1>
-    </div>
+   <LandingContent />
   );
 }

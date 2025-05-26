@@ -53,6 +53,7 @@ const config: Config = {
         black: "#000000",
         subtitle: "#828282",
         accent: "#C7AE6A",
+        accentLight: "#D2BF89",
         danger: {
           light: "#F8DAD3",
           default: "#F7D2C9",
