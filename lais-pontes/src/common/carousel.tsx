@@ -1,63 +1,42 @@
+"use client";
+import { useState, type ReactNode } from "react";
+import Autoplay from "embla-carousel-autoplay";
 import {
   Carousel,
   CarouselContent,
-  CarouselItem,
   CarouselNext,
   CarouselPrevious,
+  type CarouselApi,
 } from "@/components/ui/carousel";
-import Card from "./card";
 
-const testimonials = [
-  {
-    title: "Direito do trabalho",
-    description: "Defesa dos seus direitos nas relações de trabalho",
-    imageSrc: "/assets/trabalho.svg",
-  },
-  {
-    title: "Direito cível",
-    description: "Soluções jurídicas para conflitos do dia a dia",
-    imageSrc: "/assets/civel.svg",
-  },
-  {
-    title: "Direito do consumidor",
-    description: "Justiça em casos de abuso ou propaganda enganosa",
-    imageSrc: "/assets/consumidor.svg",
-  },
-  {
-    title: "Direito da família",
-    description:
-      "Atuação em divórcios, pensão, guarda e regulamentação de visitas",
-    imageSrc: "/assets/familia.svg",
-  },
-];
+type CarouselWrapperProps = {
+  autoplay?: boolean;
+  showArrows?: boolean;
+  children: ReactNode;
+};
 
+export function CarouselWrapper({
+  autoplay = false,
+  showArrows = true,
+  children,
+}: CarouselWrapperProps) {
+  const [, setApi] = useState<CarouselApi | undefined>(undefined);
 
-export function TestimonialsCarousel() {
-    return (
-      <Carousel
-        opts={{ align: "start" }}
-        className="w-full max-w-lg tablet:max-w-5xl mx-auto"
-      >
-        <CarouselContent>
-          {testimonials.map((testimonial, index) => (
-            <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
-              <div className="p-4">
-                <Card
-                  title={testimonial.title}
-                  description={testimonial.description}
-                  imageSrc={testimonial.imageSrc}
-                />
-              </div>
-            </CarouselItem>
-          ))}
-        </CarouselContent>
-  
-        {/* Só aparece em tablet ou maior */}
-        <div className="hidden tabletCarousel:block">
+  return (
+    <Carousel
+      setApi={setApi}
+      opts={{ align: "start", loop: true }}
+      plugins={autoplay ? [Autoplay({ delay: 6000 })] : []}
+      className="w-full max-w-lg tablet:max-w-5xl mx-auto"
+    >
+      <CarouselContent>{children}</CarouselContent>
+
+      {showArrows && (
+        <>
           <CarouselPrevious />
           <CarouselNext />
-        </div>
-      </Carousel>
-    );
-  }
-  
+        </>
+      )}
+    </Carousel>
+  );
+}
