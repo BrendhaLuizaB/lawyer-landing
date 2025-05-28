@@ -1,4 +1,4 @@
-import { CarouselWrapper } from "@/common/carousel";
+import { CarouselWrapper } from "@/common/components/carousel";
 import { CarouselItem } from "@/components/ui/carousel";
 
 function Feedbacks() {

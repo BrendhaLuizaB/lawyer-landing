@@ -1,8 +1,9 @@
-import AboutSection from "@/common/components/about/about";
-import Activity from "@/common/components/areas-of-activity/areas";
-import Feedbacks from "@/common/components/feedbacks/feedbacks";
-import { HeaderNav } from "@/common/components/header/header";
-import Hero from "@/common/components/hero/hero";
+import AboutSection from "@/components/about/about";
+import Activity from "@/components/areas-of-activity/areas";
+import FAQ from "@/components/faq/faq";
+import Feedbacks from "@/components/feedbacks/feedbacks";
+import { HeaderNav } from "@/components/header/header";
+import Hero from "@/components/hero/hero";
 
 function LandingContent() {
     return (
@@ -13,6 +14,7 @@ function LandingContent() {
           <AboutSection />
           <Activity />
           <Feedbacks />
+          <FAQ />
         </div>
       </>
     );

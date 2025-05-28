@@ -1,6 +1,6 @@
-import Card from "@/common/card";
-import { CarouselWrapper } from "@/common/carousel";
-import { Container } from "@/common/container";
+import Card from "@/common/components/card";
+import { CarouselWrapper } from "@/common/components/carousel";
+import { Container } from "@/common/components/container";
 import { CarouselItem } from "@/components/ui/carousel";
 
 function Activity() {
@@ -34,7 +34,7 @@ function Activity() {
         <h1 className="font-02 text-center tablet:text-start text-[20px] text-accent font-semibold mb-4 mt-24">
           ÁREAS DE ATUAÇÃO
         </h1>
-        <CarouselWrapper showArrows>
+        <CarouselWrapper autoplay={false} showArrows>
           {testimonials.map((testimonial, index) => (
             <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
               <div className="p-4">

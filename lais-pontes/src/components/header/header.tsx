@@ -6,8 +6,8 @@ import { tv } from "tailwind-variants";
 import Link from "next/link";
 import { NavLink } from "./components/nav-link";
 import { Button } from "../button/button";
-import { Container } from "@/common/container";
-import { PopoverComponent } from "@/common/popover";
+import { Container } from "@/common/components/container";
+import { PopoverComponent } from "@/common/components/popover";
 import { useEffect, useState } from "react";
 import classNames from "classnames";
 

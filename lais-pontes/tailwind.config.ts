@@ -52,13 +52,13 @@ const config: Config = {
   		},
   		screens: {
   			mobile: '375px',
-			tabletCarousel: '768px',
+  			tabletCarousel: '768px',
   			tablet: '1200px',
   			desktop: '1440px'
   		},
   		colors: {
   			background: '#fbf8f5',
-			secondColor: '#f9f5f0',
+  			secondColor: '#f9f5f0',
   			black: '#000000',
   			subtitle: '#828282',
   			accent: {

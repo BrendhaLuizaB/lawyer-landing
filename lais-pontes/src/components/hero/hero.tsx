@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { Button } from "../button/button";
-import { Container } from "@/common/container";
+import { Container } from "@/common/components/container";
 
 export function Hero() {
   return (

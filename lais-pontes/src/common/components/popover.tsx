@@ -5,8 +5,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEllipsisV } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
-import { NavLink } from "./components/header/components/nav-link";
-import { Button } from "./components/button/button";
+import { NavLink } from "../../components/header/components/nav-link";
+import { Button } from "../../components/button/button";
 
 const publicLinks = [
   { href: "/propostas", name: "Sobre" },
