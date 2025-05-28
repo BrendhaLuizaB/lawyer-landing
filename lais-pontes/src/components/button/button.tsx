@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import { IconProp } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import classnames from "classnames";
@@ -82,9 +82,9 @@ export type ButtonProps = ComponentProps<"button"> &
       name: IconProp;
       className?: string;
     };
-    phone?: string
-    message?: string
-    children?: React.ReactNode
+    phone?: string;
+    message?: string;
+    children?: React.ReactNode;
   };
 
 export function Button({
@@ -114,46 +114,53 @@ export function Button({
       onClick?.(event);
     }
   };
-  const base = `https://wa.me/${phone}`
-  const url = message ? `${base}?text=${encodeURIComponent(message)}` : base
-  return (
-    <>
-      <Link href={url} target="_blank" rel="noopener noreferrer">
-        <button
-          ref={buttonRef}
-          onClick={handleClick}
-          className={button({
-            variant,
-            size,
-            shape,
-            disabled: disabled || loading,
-            loading,
-            isResponsive,
-            className,
-          })}
-          disabled={disabled || loading}
-          {...props}
-        >
-          <div className="flex items-center">
-            {leftIcon}
-            <div className="relative flex items-center justify-center">
-              <span
-                className={classnames(
-                  hasIcon ? "mx-2" : "",
-                  "font-02",
-                  loading ? "invisible" : ""
-                )}
-              >
-                {text}
-              </span>
-            </div>
-          </div>
-          {rightIcon}
-          {icon && (
-            <FontAwesomeIcon icon={icon.name} className={icon.className} />
-          )}
-        </button>
-      </Link>
-    </>
+  // const base = `https://wa.me/${phone}`;
+  // const url = message ? `${base}?text=${encodeURIComponent(message)}` : base;
+  const content = (
+    <button
+      ref={buttonRef}
+      onClick={handleClick}
+      className={button({
+        variant,
+        size,
+        shape,
+        disabled: disabled || loading,
+        loading,
+        isResponsive,
+        className,
+      })}
+      disabled={disabled || loading}
+      {...props}
+    >
+      <div className="flex items-center">
+        {leftIcon}
+        <div className="relative flex items-center justify-center">
+          <span
+            className={classnames(
+              hasIcon ? "mx-2" : "",
+              "font-02",
+              loading ? "invisible" : ""
+            )}
+          >
+            {text}
+          </span>
+        </div>
+      </div>
+      {rightIcon}
+      {icon && <FontAwesomeIcon icon={icon.name} className={icon.className} />}
+    </button>
   );
+
+  if (phone) {
+    const base = `https://wa.me/${phone}`;
+    const url = message ? `${base}?text=${encodeURIComponent(message)}` : base;
+
+    return (
+      <Link href={url} target="_blank" rel="noopener noreferrer">
+        {content}
+      </Link>
+    );
+  }
+
+  return content;
 }

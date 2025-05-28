@@ -4,6 +4,7 @@ import FAQ from "@/components/faq/faq";
 import Feedbacks from "@/components/feedbacks/feedbacks";
 import { HeaderNav } from "@/components/header/header";
 import Hero from "@/components/hero/hero";
+import { MessageForm } from "@/components/sendEmail/message-form";
 
 function LandingContent() {
     return (
@@ -15,6 +16,7 @@ function LandingContent() {
           <Activity />
           <Feedbacks />
           <FAQ />
+          <MessageForm />
         </div>
       </>
     );

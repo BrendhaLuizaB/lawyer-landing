@@ -4,6 +4,7 @@ import { AppProvider } from "@/services/providers/app-provider";
 import { FONT_FAMILY, FONT_WEIGHT } from "../../tailwind.config";
 import {Lato, Roboto, Libre_Baskerville} from "next/font/google";
 import { defaultConfig } from "tailwind-variants";
+import { Toaster } from 'sonner';
 import classNames from "classnames";
 
 const roboto = Roboto({
@@ -54,6 +55,7 @@ export default async function RootLayout({
         )}
       >
         <AppProvider>{children}</AppProvider>
+        <Toaster richColors position="top-right" />
       </body>
     </html>
   );
