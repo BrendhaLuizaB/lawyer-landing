@@ -36,7 +36,7 @@ function Feedbacks() {
   ];
 
   return (
-    <div className="bg-black px-6 py-16 tablet:px-44 tablet:py-32 mt-24">
+    <div id="relatos" className="bg-black px-6 py-16 tablet:px-44 tablet:py-32 mt-24">
       <CarouselWrapper autoplay showArrows={false}>
         {feedbacks.map((feedback, index) => (
           <CarouselItem key={index} className="basis-full">

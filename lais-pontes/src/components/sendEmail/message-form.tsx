@@ -35,7 +35,7 @@ export function MessageForm() {
 
   return (
     <div>
-      <div className="flex flex-col justify-center items-center mb-14">
+      <div id="contato" className="flex flex-col justify-center items-center mb-14">
         <h1 className="font-02 text-center tablet:text-start text-[20px] text-accent font-semibold mb-4 mt-24">
           ENTRE EM CONTATO
         </h1>

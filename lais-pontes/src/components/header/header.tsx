@@ -47,11 +47,11 @@ export function HeaderNav() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
   const publicLinks = [
-    { href: "/propostas", name: "Sobre" },
-    { href: "/areas", name: "Áreas" },
-    { href: "/relatos", name: "Relatos" },
-    { href: "/duvidas", name: "Dúvidas" },
-    { href: "/contato", name: "Contato" },
+    { href: "#sobre", name: "Sobre" },
+    { href: "#areas", name: "Áreas" },
+    { href: "#relatos", name: "Relatos" },
+    { href: "#duvidas", name: "Dúvidas" },
+    { href: "#contato", name: "Contato" },
   ];
 
   return (

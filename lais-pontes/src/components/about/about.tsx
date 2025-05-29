@@ -8,7 +8,7 @@ export function AboutSection() {
 
   return (
     <Container>
-      <div className="flex flex-col tablet:flex-row justify-between items-center gap-12">
+      <div id="sobre" className="flex flex-col tablet:flex-row justify-between items-center gap-12">
         <div className="w-full tablet:w-2/3">
           <h1 className="font-02 text-center tablet:text-start text-[20px] text-accent font-semibold mb-4">
             SOBRE MIM

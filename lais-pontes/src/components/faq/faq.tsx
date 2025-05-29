@@ -37,7 +37,7 @@ const faqItems = [
 
 export function FAQ() {
   return (
-    <div className="flex flex-col justify-center items-center px-4 tablet:px-0">
+    <div id="duvidas" className="flex flex-col justify-center items-center px-4 tablet:px-0">
       <h1 className="font-02 text-center tablet:text-start text-[20px] text-accent font-semibold mb-4 mt-24">
         DÚVIDAS FREQUENTES
       </h1>

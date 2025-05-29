@@ -2,18 +2,18 @@
 
 import * as Popover from "@radix-ui/react-popover";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEllipsisV } from "@fortawesome/free-solid-svg-icons";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
 import { NavLink } from "../../components/header/components/nav-link";
 import { Button } from "../../components/button/button";
 
 const publicLinks = [
-  { href: "/propostas", name: "Sobre" },
-  { href: "/areas", name: "Áreas" },
-  { href: "/relatos", name: "Relatos" },
-  { href: "/duvidas", name: "Dúvidas" },
-  { href: "/contato", name: "Contato" },
+  { href: "#sobre", name: "Sobre" },
+  { href: "#areas", name: "Áreas" },
+  { href: "#relatos", name: "Relatos" },
+  { href: "#duvidas", name: "Dúvidas" },
+  { href: "#contato", name: "Contato" },
 ];
 
 export function PopoverComponent() {
@@ -25,11 +25,8 @@ export function PopoverComponent() {
       <Popover.Trigger asChild>
         <button aria-label="Abrir menu">
           <FontAwesomeIcon
-            icon={faEllipsisV}
+            icon={faBars}
             size="lg"
-            className={`transition-transform duration-300 ease-in-out ${
-              open ? "rotate-90" : "rotate-0"
-            }`}
           />
         </button>
       </Popover.Trigger>
