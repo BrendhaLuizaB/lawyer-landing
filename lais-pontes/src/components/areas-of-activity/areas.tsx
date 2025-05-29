@@ -1,3 +1,5 @@
+'use client'
+import { useEffect, useState } from "react";
 import Card from "@/common/components/card";
 import { CarouselWrapper } from "@/common/components/carousel";
 import { Container } from "@/common/components/container";
@@ -28,13 +30,25 @@ function Activity() {
     },
   ];
 
+  const [isTabletUp, setIsTabletUp] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsTabletUp(window.innerWidth >= 768);
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <Container className="flex flex-col justify-center">
       <div id="areas" className="flex flex-col items-center">
         <h1 className="font-02 text-center tablet:text-start text-[20px] text-accent font-semibold mb-4 mt-24">
           ÁREAS DE ATUAÇÃO
         </h1>
-        <CarouselWrapper autoplay={false} showArrows>
+        <CarouselWrapper autoplay={false} showArrows={isTabletUp}>
           {testimonials.map((testimonial, index) => (
             <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
               <div className="p-4">
