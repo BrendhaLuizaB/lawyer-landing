@@ -22,11 +22,13 @@ export function Hero() {
       </div>
       <div className="flex justify-center mt-12 px-4 tablet:px-0">
         <Image
-          className="rounded-sm w-full max-h-[640px] max-w-full object-cover "
           src="/assets/martelo.jpg"
           alt="Martelo"
-          width={1300}
-          height={440}
+          fill
+          sizes="(max-width: 768px) 100vw, 1300px"
+          className="rounded-sm object-cover"
+          priority
+          fetchPriority="high"
         />
       </div>
     </Container>
