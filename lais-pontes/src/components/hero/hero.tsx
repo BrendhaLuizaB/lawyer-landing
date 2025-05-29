@@ -24,8 +24,8 @@ export function Hero() {
         <Image
           src="/assets/martelo.jpg"
           alt="Martelo"
-          fill
-          sizes="(max-width: 768px) 100vw, 1300px"
+          width={1300}
+          height={440}
           className="rounded-sm object-cover"
           priority
           fetchPriority="high"
